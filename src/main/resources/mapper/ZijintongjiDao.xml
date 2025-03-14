@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ZijintongjiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ZijintongjiEntity" id="zijintongjiMap">
+        <result property="nianfen" column="nianfen"/>
+        <result property="yuefen" column="yuefen"/>
+        <result property="shangpinshouru" column="shangpinshouru"/>
+        <result property="shourushixiang" column="shourushixiang"/>
+        <result property="shourujine" column="shourujine"/>
+        <result property="huafeizhichu" column="huafeizhichu"/>
+        <result property="nongyaozhichu" column="nongyaozhichu"/>
+        <result property="nongjuweihu" column="nongjuweihu"/>
+        <result property="nongjiweihu" column="nongjiweihu"/>
+        <result property="chuanganqiweihu" column="chuanganqiweihu"/>
+        <result property="zhichushixiang" column="zhichushixiang"/>
+        <result property="zhichujine" column="zhichujine"/>
+        <result property="jieyujine" column="jieyujine"/>
+        <result property="jieyuzhuangtai" column="jieyuzhuangtai"/>
+        <result property="dengjiriqi" column="dengjiriqi"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ZijintongjiVO" >
+		SELECT * FROM zijintongji  zijintongji         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ZijintongjiVO" >
+		SELECT  zijintongji.* FROM zijintongji  zijintongji 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ZijintongjiView" >
+
+		SELECT  zijintongji.* FROM zijintongji  zijintongji 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ZijintongjiView" >
+		SELECT * FROM zijintongji  zijintongji <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>
